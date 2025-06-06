@@ -2,8 +2,8 @@ import pandas as pd
 import os
 
 
-RAW_PATH = os.path.join("/content","fintech-review-analysis","scripts","bank_reviews_raw.csv")
-CLEAN_PATH = os.path.join("/content","fintech-review-analysis","scripts", "bank_reviews_clean.csv")
+RAW_PATH = os.path.join("/content","drive","MyDrive","10Acadamy","bank_reviews_raw.csv")
+CLEAN_PATH = os.path.join("/content","drive","MyDrive","10Acadamy", "bank_reviews_clean.csv")
 
 def clean_reviews(raw_csv=RAW_PATH, output_csv=CLEAN_PATH):
   print(f"📥 Loading data from: {raw_csv}")
