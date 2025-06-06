@@ -2,7 +2,7 @@ from google_play_scraper import app, Sort, reviews
 import pandas as pd 
 from datetime import datetime
 
-def get_reviews(app_id, bank_name, count=401):
+def get_reviews(app_id, bank_name, count=400):
   all_reviews = []
   token = None
 
@@ -31,14 +31,14 @@ def get_reviews(app_id, bank_name, count=401):
 
 if __name__ == "__main__":
   banks = {
-    'com.combankethh': 'CBE',
-    'com.ethiopianbank.bankofabyssinia': 'BOA',
-    'com.m2i.dashenbank': 'Dashen'
+    'com.combanketh.mobilebanking': 'CBE',
+    'com.boa.boaMobileBanking': 'BOA',
+    'com.dashen.dashensuperapp': 'Dashen'
   }
 
-  all_date = pd.concat(
-    [get_reviews(app_id, bank_name) for app_id, bank_anme in banks.items()],
+  all_data = pd.concat(
+    [get_reviews(app_id, bank_name) for app_id, bank_name in banks.items()],
     ignore_index=True
   )
-  all_data.to_csv('bank_reviews_raw.csv', index=False)
+  all_data.to_csv('/content/drive/MyDrive/10Acadamy/bank_reviews_raw.csv', index=False)
   print("✅ Reviews scraped and saved to 'bank_reviews_raw.csv'")
